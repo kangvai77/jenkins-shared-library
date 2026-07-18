@@ -11,7 +11,7 @@ def call(Map config = [:]) {
     String memRequest   = config.get('memRequest', '512Mi')
     String cpuLimit     = config.get('cpuLimit', '1')
     String memLimit     = config.get('memLimit', '1Gi')
-    Boolean useCache    = config.get('useCache', false)
+    Boolean useCache    = config.get('useCache', true)
     String cacheClaim   = config.get('cacheClaimName', 'maven-cache-pvc')
 
     // 缓存卷:useCache=true 用 PVC(跨构建持久化),false 用 emptyDir(仅本次构建有效)
